@@ -97,12 +97,13 @@ header {
   border-radius: 8px;
   margin-top: 1.5rem;
   display: inline-block;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth color and scale change */
   text-align: left; /* Left align the CTA */
 }
 
 .cta:hover {
   background-color: #e6b800; /* slightly darker yellow on hover */
+  transform: scale(1.05); /* Slightly grow the button on hover */
 }
 
 footer {
@@ -114,12 +115,23 @@ footer {
   margin-top: 5%;
 }
 
+/* Make the page responsive for smaller screens */
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 1.5rem;
+  .hero {
+    padding: 1rem 0.5rem;
+    min-height: 50vh;
   }
-
+  .hero h1 {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
   .hero p {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+  .cta {
+    margin-left: 1rem;
+    padding: 0.7rem 1.2rem;
     font-size: 1rem;
   }
 }
